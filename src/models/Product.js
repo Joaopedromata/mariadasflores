@@ -12,11 +12,7 @@ class Product extends Model {
     }
 
     static associate(models) {
-        this.belongsToMany(models.Category, { 
-            foreignKey: 'product_id', 
-            through: 'category_product', 
-            as: 'associateProdCat' 
-        })
+        this.belongsTo(models.Category, { foreignKey: 'category_id', as: 'category' })
     }
 
 }

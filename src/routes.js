@@ -15,6 +15,6 @@ routes.post('/users/:user_id/addresses', AddressController.store)
 routes.post('/categories', CategoryController.store)
 
 routes.post('/:category_id/products', ProductController.store)
-//routes.get('/:category/products', ProductController.index)
+routes.get('/:category_id/products', ProductController.index)
 
 module.exports = routes

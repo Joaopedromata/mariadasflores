@@ -11,7 +11,11 @@ module.exports = {
             include: { association: 'addresses'}
         })
 
-        return res.status(200).json(show.addresses)
+        if (!show) {
+            return res.status(400).json({ error: 'Users not found' })
+        }
+
+        return res.status(200).json(show)
     },
 
     async store(req, res) {
